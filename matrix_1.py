@@ -1,6 +1,8 @@
 import math
 
 def list(mat):
+    
+    """mat -->list"""
 
     li=[]
 
@@ -97,8 +99,6 @@ def cp_x4(a, b, c, d):
             re = [3, 0, xa, xb, xb]
 
         else :
-
-            import math
 
             T= (2*A*b-3*a*B)/(2*A**(3/2))
 
