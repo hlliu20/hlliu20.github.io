@@ -8,7 +8,7 @@ def cp_x2(a, b, c):
 
         if b==0:
 
-            re = [0, 0]
+            re = [0, 0] # [实数根个数, 复数根个数]
 
         elif type(b)==complex or type(c)==complex:
 
@@ -119,6 +119,9 @@ def cp_x3(a, b, c, d):
     return re
 
 def cp_x4(a, b, c, d, e):
+    
+  """ax^4+bx^3+cx^2+dx+e=0
+  费拉里法"""
 
     if a == 0:
 
@@ -206,7 +209,20 @@ def cp_x4(a, b, c, d, e):
 
     return re
 
+def cp_x5(a, b, c, d, e, f):
+    
+    if a == 0:
+        
+        re = cp_x4(b, c, d,e, f)
+        
+    else :
+        
+        pass
+    
+
 def comp(li, name="x"):
+    
+    """规范输出"""
 
     re = ""
 
