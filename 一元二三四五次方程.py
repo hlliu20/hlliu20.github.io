@@ -64,6 +64,88 @@ def cp_x3(a, b, c, d):
             re = [3, 0, xa, xb, xc]
     return re
 
+def x3eq(a, b, c, d):
+    # 改编自99参考网http://www.99cankao.com/
+    if(a == 0):
+
+        x2eq(b, c, d)
+
+    elif(d == 0):
+
+        print("x3=0")
+
+        x2eq(a, b, c)
+
+    else:
+        
+        b/=a
+
+        c/=a
+
+        d/=a
+        
+        q = (3.0*c-b*b)/9.0
+
+        r = -(27.0*d)+b*(9.0*c-2.0*b*b)
+
+        r /= 54.0
+
+        disc = q*q*q + r*r
+
+        term = b/3.0
+
+        if(disc>0):
+
+            s = r + math.sqrt(disc) 
+            
+            s = -math.pow(-s,1/3) if s<0 else math.pow(s,1/3)
+
+            t = r - math.sqrt(disc)
+
+            t = -math.pow(-t,1/3) if t<0 else math.pow(t,1/3)
+
+            x1_re = -term + s + t
+
+            term += (s+t)/2
+
+            x3_re = x2_re = -term
+
+            term = math.sqrt(3)*(-t+s)/2
+
+            x2_im = term
+
+            x3_im = -term
+
+            print("x1=",x1_re,"\nx2=",x2_re,"+",x2_im,"i\nx3=",x3_re,"+",x3_im,"i")
+
+        elif(disc==0):
+
+            r13 = -math.pow(-r,1/3) if r<0 else math.pow(r,1/3)
+            
+            x1_re = -term + 2*r13
+
+            x2_re = x3_re = -(r13+term)
+
+            print("x1=",x1_re,"\nx2=",x2_re,"\nx3=",x3_re)
+
+        else:                                                                                 
+            
+            q = -q
+
+            duml = q*q*q
+
+            duml = math.acos(r/math.sqrt(duml))
+
+            r13 = 2*math.sqrt(q)
+
+            x1_re = -term + r13*math.cos(duml/3)
+
+            x2_re = -term + r13*math.cos((duml+2*math.pi)/3)
+
+            x3_re = -term + r13*math.cos((duml+4*math.pi)/3)                                  
+            
+            print("x1=",x1_re,"\nx2=",x2_re,"\nx3=",x3_re)
+
 
 def cp_x4(a, b, c, d, e):
     """ax^4+bx^3+cx^2+dx+e=0
