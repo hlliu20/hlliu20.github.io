@@ -65,6 +65,7 @@ def cp_x3(a, b, c, d):
     return re
 
 def x3eq(a, b, c, d):
+    """ax^3+bx^2+cx+d=0"""
     # 改编自99参考网http://www.99cankao.com/
     if(a == 0):
 
